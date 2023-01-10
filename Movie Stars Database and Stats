@@ -1,0 +1,70 @@
+CREATE TABLE movie_stars
+(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+fullname TEXT,
+age INTEGER);
+
+INSERT INTO movie_stars (fullname, age) VALUES ("Sue Lue", "29");
+INSERT INTO movie_stars (fullname, age) VALUES ("John Miller", "30");
+INSERT INTO movie_stars (fullname, age) VALUES ("Susan Jones", "40");
+INSERT INTO movie_stars (fullname, age) VALUES ("Mike Jeans", "55");
+INSERT INTO movie_stars (fullname, age) VALUES ("Lisa Seagel", "46");
+INSERT INTO movie_stars (fullname, age) VALUES ("Aubrey Rose", "18");
+INSERT INTO movie_stars (fullname, age) VALUES ("Chloe Metz", "31");
+
+CREATE TABLE hobbies
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+person_id INTEGER, name TEXT);
+
+INSERT INTO hobbies (person_id, name) VALUES (1, "coding");
+INSERT INTO hobbies (person_id, name) VALUES (2, "fishing");
+INSERT INTO hobbies (person_id, name) VALUES (3, "reading");
+INSERT INTO hobbies (person_id, name) VALUES (4, "biking");
+INSERT INTO hobbies (person_id, name) VALUES (5, "drawing");
+INSERT INTO hobbies (person_id, name) VALUES (6, "dancing");
+INSERT INTO hobbies (person_id, name) VALUES (7, "skating");
+
+CREATE TABLE movies
+(id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, name TEXT);
+
+INSERT INTO movies (person_id, name) VALUES (1, "Rising Sun");
+INSERT INTO movies (person_id, name) VALUES (2, "Flying High");
+INSERT INTO movies (person_id, name) VALUES (1, "Crescent Cows");
+INSERT INTO movies (person_id, name) VALUES (3, "Dino");
+INSERT INTO movies (person_id, name) VALUES (4, "Twigs");
+INSERT INTO movies (person_id, name) VALUES (5, "Digging");
+INSERT INTO movies (person_id, name) VALUES (6, "Sahara");
+INSERT INTO movies (person_id, name) VALUES (6, "Diamonds");
+INSERT INTO movies (person_id, name) VALUES (7, "Julianna");
+
+CREATE TABLE birth_place
+(id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, state TEXT, country TEXT);
+
+INSERT INTO birth_place (person_id, state, country) VALUES (1, "New Jersey", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (2, "New York", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (3, "New York", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (4, "Florida", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (5, "California", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (6, "Ohio", "USA");
+INSERT INTO birth_place (person_id, state, country) VALUES (7, "Georgia", "USA");
+
+SELECT movie_stars.fullname, hobbies.name
+FROM movie_stars
+JOIN hobbies
+ON movie_stars.id = hobbies.id;
+
+SELECT hobbies.id, hobbies.name, movies.name
+FROM hobbies
+JOIN movies
+ON hobbies.id = movies.id;
+
+SELECT movie_stars.fullname, hobbies.name, movies.name, movie_stars.id, hobbies.id
+FROM movie_stars
+JOIN hobbies
+ON movie_stars.id = hobbies.id
+JOIN movies
+ON hobbies.id = movies.id;
+
+SELECT movie_stars.fullname, birth_place.state, birth_place.country
+FROM movie_stars
+JOIN birth_place
+ON movie_stars.id = birth_place.id;
