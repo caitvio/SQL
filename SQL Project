@@ -1,5 +1,5 @@
 #1.
-Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to").
+Show Customers (their full names, customer ID, and country) who are not in the US.
 SELECT FirstName, LastName, CustomerId, Country
 FROM chinook.customers
 WHERE Country <> 'USA';
@@ -37,7 +37,7 @@ FROM chinook.invoices;
 
 
 #6.
-Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
+Provide a query that shows the invoices associated with each sales agent.
 SELECT emp.LastName, emp.FirstName, inv.InvoiceId
 FROM chinook.employees AS emp
 JOIN chinook.customers AS cust
