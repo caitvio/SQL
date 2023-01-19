@@ -1,0 +1,82 @@
+CREATE TABLE online_games (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, score INTEGER);
+
+INSERT INTO online_games (name, score) VALUES ("solitaire", 300);
+
+INSERT INTO online_games (name, score) VALUES ("minesweep", 48);
+
+INSERT INTO online_games (name, score) VALUES ("black jack", 200);
+
+INSERT INTO online_games (name, score) VALUES ("go fish", 157);
+
+INSERT INTO online_games (name, score) VALUES ("poker", 500);
+
+INSERT INTO online_games (name, score) VALUES ("rummy", 385);
+
+INSERT INTO online_games (name, score) VALUES ("bingo", 287);
+
+INSERT INTO online_games (name, score) VALUES ("connect four", 100);
+
+INSERT INTO online_games (name, score) VALUES ("simon", 62);
+
+INSERT INTO online_games (name, score) VALUES ("sequence", 89);
+
+INSERT INTO online_games (name, score) VALUES ("war", 335);
+
+INSERT INTO online_games (name, score) VALUES ("tetris", 557);
+
+INSERT INTO online_games (name, score) VALUES ("jenga", 135);
+
+INSERT INTO online_games (name, score) VALUES ("sorry", 333);
+
+INSERT INTO online_games (name, score) VALUES ("monopoly", 400);
+
+INSERT INTO online_games (name, score) VALUES ("candyland", 345);
+
+SELECT *
+FROM online_games;
+
+ALTER TABLE online_games
+ADD coins INTEGER;
+
+SELECT *
+FROM online_games;
+
+UPDATE online_games SET coins = 50 WHERE id = 1;
+
+UPDATE online_games SET coins = 100 WHERE id = 2;
+
+UPDATE online_games SET coins = 80 WHERE id = 3;
+
+UPDATE online_games SET coins = 90 WHERE id = 4;
+
+UPDATE online_games SET coins = 85 WHERE id = 5;
+
+UPDATE online_games SET coins = 75 WHERE id = 6;
+
+UPDATE online_games SET coins = 50 WHERE id = 7;
+
+UPDATE online_games SET coins = 40 WHERE id = 8;
+
+UPDATE online_games SET coins = 50 WHERE id = 9;
+
+UPDATE online_games SET coins = 70 WHERE id = 10;
+
+UPDATE online_games SET coins = 30 WHERE id = 11;
+
+UPDATE online_games SET coins = 50 WHERE id = 12;
+
+UPDATE online_games SET coins = 100 WHERE id = 13;
+
+UPDATE online_games SET coins = 90 WHERE id = 14;
+
+UPDATE online_games SET coins = 60 WHERE id = 15;
+
+UPDATE online_games SET coins = 150 WHERE id = 16;
+
+SELECT *
+FROM online_games;
+
+DELETE FROM online_games WHERE id = 13;
+
+SELECT * 
+FROM online_games;
